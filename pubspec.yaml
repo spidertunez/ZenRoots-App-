@@ -63,6 +63,8 @@ flutter:
   assets:
     - assets/images/Brown Boho Spa and Wellness Logo 2.png
     - assets/images/amico.png
+    - assets/images/cuate.png
+    - assets/images/cuate.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         Splash.route: (context) => const Splash(),
         onboard1.route: (context) => const onboard1(),
         onboard2.route: (context) => const onboard2(),
-        onboard3.route: (context) => const onboard2(),
+        onboard3.route: (context) => const onboard3(),
       },
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled20/_b3.dart';
+import '_b3.dart';
+import '_b2.dart';
 
 class onboard1 extends StatelessWidget {
   const onboard1({super.key});
@@ -27,18 +28,60 @@ class onboard1 extends StatelessWidget {
         children: [ 
            SizedBox(height: 40,),
            Container(
-             margin: EdgeInsets.only(left: 20, right: 20),
+             margin: EdgeInsets.only(left: 20, right: 22),
            child:
              Column(
                children: [   Image.asset("assets/images/amico.png"),
              Text("Welcome to ZenRoots !", style:TextStyle
-               (fontWeight: FontWeight.bold,fontSize: 35, color: Colors.black),)
+               (fontWeight: FontWeight.bold,fontSize: 35, color: Colors.black),),
+                 SizedBox(height: 10,)
                  ,Text("Here, you find peace of mind and tranquility through gardening and healthy habits"
                      , style: TextStyle(fontSize: 17.5, fontWeight: FontWeight.w400, color: Colors.grey),)
                ],
              )
-
            )
+          ,SizedBox(height:210 ,),
+          Row(
+            children: [
+              Container( margin: EdgeInsets.only( left :30),
+
+                child: Row(
+                  children: [ SizedBox(width: 130,)
+                    ,Container(
+                      width: 40,height: 10,
+                      decoration: BoxDecoration(color: Colors.black87,borderRadius: BorderRadius.circular(20)),
+
+                  ),
+                   SizedBox(width: 7,),
+                   Container(
+                   width: 10,height: 10,
+                    decoration: BoxDecoration(color: Color(0xffE1BEE7),borderRadius: BorderRadius.circular(20)
+                    ),),
+
+                     SizedBox(width: 7,),
+                  Container(
+                      width: 10,height: 10,
+                      decoration: BoxDecoration(color: Color(0xffE1BEE7),borderRadius: BorderRadius.circular(20))
+
+                   )
+                  ],
+                ),
+              ),
+              SizedBox(width: 90,),
+              Container(margin: EdgeInsets.only( right: 10),
+                child:
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, onboard2.route);
+                },
+                child: const Text(
+                  'Next',
+                  style: TextStyle(color: Colors.black, fontSize: 22),
+                ),
+    )
+              ),
+            ],
+          )
         ],
       ),
     );
