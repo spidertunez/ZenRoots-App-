@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import '_b1.dart';
+import 'custom_page_route.dart';
 
 class Splash extends StatelessWidget {
   const Splash({super.key});
@@ -9,7 +10,9 @@ class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Timer(Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacementNamed(onboard1.route);
+      Navigator.of(context).pushReplacement(
+        SlidePageRoute(page: Onboard1()),
+      );
     });
 
     return Scaffold(
