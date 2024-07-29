@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:untitled20/home.dart';
 import 'custom_page_route.dart';
-import '_b2.dart';
+
 
 
 
@@ -45,7 +46,12 @@ class onboard3 extends StatelessWidget {
           )
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                SlidePageRoute(page:home()),
+              );
+            },
             style: ElevatedButton.styleFrom(
               foregroundColor: Colors.white,
               backgroundColor: Color(0xffB498B9),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled20/home.dart';
 import 'splash.dart';
 import '_b1.dart';
 import '_b2.dart';
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
         Onboard1.route: (context) => const Onboard1(),
         Onboard2.route: (context) => const Onboard2(),
         onboard3.route: (context) => const onboard3(),
+        home.route:(context) => const home(),
       },
     );
   }

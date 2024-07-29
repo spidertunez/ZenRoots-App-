@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '_b2.dart'; // Ensure you import onboard2
-import '_b3.dart'; // Ensure you import onboard3
-import 'custom_page_route.dart'; // Import the custom page route
+import '_b2.dart';
+import '_b3.dart';
+import 'custom_page_route.dart';
 
 class Onboard1 extends StatelessWidget {
   const Onboard1({super.key});
