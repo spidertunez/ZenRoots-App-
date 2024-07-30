@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
+import 'meditation.dart';
+import 'sleep.dart';
+import 'track.dart';
+import 'reduce.dart';
+import 'CustomBottomNavigationBar.dart';
 
-class home extends StatelessWidget {
+class home extends StatefulWidget {
   const home({super.key});
   static const String route = '/home';
+
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<home> {
+  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -147,71 +159,29 @@ class home extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: Container(
-        margin: EdgeInsets.all(5),
-        decoration: BoxDecoration(
-          color: Color(0xfffbf5fb),
-          borderRadius: BorderRadius.all(Radius.circular(20)),
-          border: Border.all(
-            color: Colors.grey,
-            width: 2.2,
-          ),
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
-          child: BottomNavigationBar(
-            items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home, size: 30, color: Colors.grey),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.group, size: 30, color: Colors.grey),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.notifications, size: 30, color: Colors.grey),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.favorite, size: 30, color: Colors.grey),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person, size: 30, color: Colors.grey),
-                label: '',
-              ),
-            ],
-            currentIndex: 0,
-            onTap: (index) {
-
-              print('Selected index: $index');
-            },
-            type: BottomNavigationBarType.fixed,
-            selectedItemColor: Colors.purple,
-            unselectedItemColor: Colors.grey,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-          ),
-        ),
+      bottomNavigationBar: CustomBottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
       ),
     );
   }
 
   List<Widget> _buildGestureDetectors() {
-
     final items = [
-      {'text': 'Meditation', 'image': 'assets/images/amico 3.png'},
-      {'text': 'Sleep improvement', 'image': 'assets/images/amico 2.png'},
-      {'text': 'Track Mood', 'image': 'assets/images/bro.png'},
-      {'text': 'Reduce stress', 'image': 'assets/images/bro 2.png'},
+      {'text': 'Meditation', 'image': 'assets/images/amico 3.png', 'route': meditation.route},
+      {'text': 'Sleep improvement', 'image': 'assets/images/amico 2.png', 'route': sleep.route},
+      {'text': 'Track Mood', 'image': 'assets/images/bro.png', 'route': track.route},
+      {'text': 'Reduce stress', 'image': 'assets/images/bro 2.png', 'route': reduce.route},
     ];
 
     return items.map((item) {
       return GestureDetector(
         onTap: () {
-
-          print('${item['text']} tapped');
+          Navigator.pushNamed(context, item['route']!);
         },
         child: Container(
           margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
@@ -244,8 +214,8 @@ class home extends StatelessWidget {
               SizedBox(width: 16),
               Image.asset(
                 item['image']!,
-                width: 80,
-                height: 80,
+                width: 90,
+                height: 90,
                 fit: BoxFit.cover,
               ),
             ],
