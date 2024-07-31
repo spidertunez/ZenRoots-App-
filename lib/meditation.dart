@@ -81,7 +81,7 @@ class _MeditationState extends State<meditation> {
                               SizedBox(height: 10),
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.pushNamed(context, '/flower');
+                                  Navigator.pushNamed(context, '/flower1');
                                 },
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,

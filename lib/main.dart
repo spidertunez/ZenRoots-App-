@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled20/favorites.dart';
-import 'package:untitled20/flower.dart';
+import 'Flower1.dart';
 import 'package:untitled20/group.dart';
 import 'package:untitled20/home.dart';
 import 'package:untitled20/meditation.dart';
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         meditation.route:(context)=> const meditation(),
         track.route:(context)=> const track(),
         reduce.route:(context)=> const reduce(),
-        flower.route:(context)=> const flower(),
+        Flower1.route:(context)=> const Flower1(),
         self.route:(context)=> const self(),
         group.route:(context)=> const group(),
         favourites.route:(context)=> const favourites(),
