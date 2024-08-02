@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'custom_page_route.dart';
 import 'meditation.dart';
 import 'sleep.dart';
 import 'track.dart';
@@ -172,16 +173,35 @@ class _HomeState extends State<home> {
 
   List<Widget> _buildGestureDetectors() {
     final items = [
-      {'text': 'Meditation', 'image': 'assets/images/amico 3.png', 'route': meditation.route},
-      {'text': 'Sleep improvement', 'image': 'assets/images/amico 2.png', 'route': sleep.route},
-      {'text': 'Track Mood', 'image': 'assets/images/bro.png', 'route': track.route},
-      {'text': 'Reduce stress', 'image': 'assets/images/bro 2.png', 'route': reduce.route},
+      {
+        'text': 'Meditation',
+        'image': 'assets/images/amico 3.png',
+        'page': meditation()
+      },
+      {
+        'text': 'Sleep improvement',
+        'image': 'assets/images/amico 2.png',
+        'page': sleep()
+      },
+      {'text': 'Track Mood', 'image': 'assets/images/bro.png', 'page': track()},
+      {
+        'text': 'Reduce stress',
+        'image': 'assets/images/bro 2.png',
+        'page': reduce()
+      },
     ];
 
     return items.map((item) {
+      final page = item['page'] as Widget; // Explicitly cast to Widget
+      final imagePath = item['image'] as String; // Explicitly cast to String
+      final text = item['text'] as String; // Explicitly cast to String
+
       return GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, item['route']!);
+          Navigator.pushReplacement(
+            context,
+            SlidePageRoute(page: page), // Use the casted widget
+          );
         },
         child: Container(
           margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
@@ -207,13 +227,15 @@ class _HomeState extends State<home> {
             children: [
               Expanded(
                 child: Text(
-                  item['text']!,
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600, color: Color(0xff4F4351)),
+                  text, // Use the casted string
+                  style: TextStyle(fontSize: 22,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xff4F4351)),
                 ),
               ),
               SizedBox(width: 16),
               Image.asset(
-                item['image']!,
+                imagePath, // Use the casted string
                 width: 90,
                 height: 90,
                 fit: BoxFit.cover,

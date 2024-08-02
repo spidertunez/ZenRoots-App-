@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled20/home.dart';
 import 'custom_page_route.dart';
-
+import 'Login.dart';
 
 
 
@@ -49,7 +49,7 @@ class onboard3 extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                SlidePageRoute(page:home()),
+                SlidePageRoute(page:Login()),
               );
             },
             style: ElevatedButton.styleFrom(

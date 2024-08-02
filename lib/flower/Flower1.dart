@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled20/meditation.dart';
-import 'custom_page_route.dart';
-
+import 'package:untitled20/sleep2.dart';
+import '../custom_page_route.dart';
 
 class Flower1 extends StatefulWidget {
   const Flower1({super.key});
@@ -14,7 +14,6 @@ class Flower1 extends StatefulWidget {
 class _Flower1State extends State<Flower1> {
 
   final TextEditingController _controller = TextEditingController();
-
 
   final List<Map<String, String>> _items = [
     {"image": "assets/images/Frame 33919.png", "title": "Rose Meditation", "rate": "4.5"},
@@ -32,36 +31,69 @@ class _Flower1State extends State<Flower1> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Row for the back button
-           IconButton(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    SlidePageRoute(page: meditation()),
-                  );
-                },
-                icon: Icon(
-                  Icons.keyboard_arrow_left,
-                  color: Color(0xffB498B9),
-                  size: 60,
-                ),
-              ),
-
-            // Row for the images
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 5),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.asset(
-                    "assets/images/hand.png",
-                    width: 140,
-                    height: 140,
+                  Container(
+                    width: 55, // Smaller width of the circular button
+                    height: 55, // Smaller height of the circular button
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2), // Color of the shadow
+                          spreadRadius: 5, // Amount by which the shadow spreads
+                          blurRadius: 4, // Amount of blur
+                          offset: Offset(0, 2), // Offset of the shadow (horizontal, vertical)
+                        ),
+                      ],// Background color of the circle
+                    ),
+
+                    child: Center(
+                      child: IconButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            SlidePageRoute(page: meditation()),
+                          );
+                        },
+                        icon: Icon(
+                          Icons.keyboard_arrow_left,
+                          color: Color(0xffB498B9), // Color of the arrow
+                          size: 39, // Larger size of the arrow icon
+                        ),
+                      ),
+                    ),
                   ),
-                  Image.asset(
-                    "assets/images/Rose-2.png",
-                    width: 140,
-                    height: 140,
+                ],
+              ),
+            ),
+            Container(
+              height: 130, // Set an explicit height
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: 0,
+                    top: 4,
+                    child: Image.asset(
+                      "assets/images/hand.png",
+                      width: 140,
+                      height: 140,
+                      fit: BoxFit.cover, // Ensure the image fits within the container
+                    ),
+                  ),
+                  Positioned(
+                    right: 0,
+                    top: 4,
+
+                    child: Image.asset(
+                      "assets/images/Rose-2.png",
+                      width: 140,
+                      height: 140,
+                      fit: BoxFit.cover, // Ensure the image fits within the container
+                    ),
                   ),
                 ],
               ),
@@ -69,15 +101,15 @@ class _Flower1State extends State<Flower1> {
 
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       'Flower Meditation',
                       style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 40,
+                        fontWeight: FontWeight.normal,
+                        fontSize: 35,
                         color: Color(0xff3F3541),
                       ),
                       textAlign: TextAlign.center,
@@ -141,7 +173,7 @@ class _Flower1State extends State<Flower1> {
                               width: 2,
                             ),
                           ),
-                          hintText: ' Search your session',
+                          hintText: 'Search your session',
                           hintStyle: TextStyle(color: Colors.grey[600]),
                         ),
                       ),
@@ -224,11 +256,15 @@ class _Flower1State extends State<Flower1> {
                                 SizedBox(height: 8),
                                 TextButton(
                                   onPressed: () {
-
+                                    Navigator.pushReplacement(
+                                      context,
+                                      SlidePageRoute(page: meditation()), // Ensure you have `Meditation` defined
+                                    );
                                   },
                                   style: TextButton.styleFrom(
                                     padding: EdgeInsets.symmetric(vertical: 5, horizontal: 50),
-                                    foregroundColor: Colors.white, backgroundColor: Color(0xffB498B9),
+                                    foregroundColor: Colors.white,
+                                    backgroundColor: Color(0xffB498B9),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20),
                                     ),

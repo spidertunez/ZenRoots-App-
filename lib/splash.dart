@@ -10,10 +10,11 @@ class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Timer(Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacement(
+      Navigator.pushReplacement(
+        context,
         SlidePageRoute(page: Onboard1()),
       );
-    });
+    },);
 
     return Scaffold(
       backgroundColor: const Color(0xfffbf5fb),

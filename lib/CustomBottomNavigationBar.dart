@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:untitled20/community.dart';
 import 'home.dart';
 import 'profile.dart';
 import 'favorites.dart';
 import 'notifications.dart';
-import 'group.dart';
+import 'community.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   final int currentIndex;
@@ -18,14 +19,18 @@ class CustomBottomNavigationBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(20)),
-        border: Border.all(
-          color: Colors.purple.shade100,
-          width: 2.2,
-        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 2,
+            blurRadius: 8,
+            offset: Offset(0, 4), // changes position of shadow
+          ),
+        ],
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.all(Radius.circular(20)),
-        child: BottomNavigationBar(
+        child: BottomNavigationBar( backgroundColor: Colors.white,
           items: [
             BottomNavigationBarItem(
               icon: Icon(
@@ -39,7 +44,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
               icon: Icon(
                 Icons.group,
                 size: 30,
-                color: currentIndex == 1 ?Color(0xffCBABD0) : Colors.grey[400],
+                color: currentIndex == 1 ? Color(0xffCBABD0) : Colors.grey[400],
               ),
               label: '',
             ),
@@ -47,7 +52,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
               icon: Icon(
                 Icons.notifications,
                 size: 30,
-                color: currentIndex == 2 ?Color(0xffCBABD0): Colors.grey[400],
+                color: currentIndex == 2 ? Color(0xffCBABD0) : Colors.grey[400],
               ),
               label: '',
             ),
@@ -55,7 +60,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
               icon: Icon(
                 Icons.favorite,
                 size: 30,
-                color: currentIndex == 3 ? Color(0xffCBABD0): Colors.grey[400],
+                color: currentIndex == 3 ? Color(0xffCBABD0) : Colors.grey[400],
               ),
               label: '',
             ),
@@ -63,7 +68,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
               icon: Icon(
                 Icons.person,
                 size: 30,
-                color: currentIndex == 4 ? Color(0xffCBABD0): Colors.grey[400],
+                color: currentIndex == 4 ? Color(0xffCBABD0) : Colors.grey[400],
               ),
               label: '',
             ),
@@ -80,7 +85,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
               case 1:
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => group()),
+                  MaterialPageRoute(builder: (context) => community()),
                 );
                 break;
               case 2:
@@ -92,7 +97,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
               case 3:
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => favourites()),
+                  MaterialPageRoute(builder: (context) => favorites()),
                 );
                 break;
               case 4:

@@ -86,7 +86,72 @@ flutter:
     - assets/images/Frame 33919.png
     - assets/images/Frame 33919-2.png
     - assets/images/Frame 33919-3.png
-  #   - images/a_dot_ham.jpeg
+    - assets/images/pana 3.png
+    - assets/images/Frame 33878-2.png
+    - assets/images/amico 4.png
+    - assets/images/Frame 33877-2.png
+    - assets/images/Frame 33869-2.png
+    - assets/images/Frame 33877.png
+    - assets/images/Frame 34019.png
+    - assets/images/Frame 34020.png
+    - assets/images/mosque.png
+    - assets/images/Quran-3.png
+    - assets/images/Quran-4.png
+    - assets/images/Ellipse 7.png
+    - assets/images/Man searching music with phone.png
+    - assets/images/Ocean Waves Sound.png
+    - assets/images/Sound.png
+    - assets/images/Sound-2.png
+    - assets/images/Sound-3.png
+    - assets/images/Sound-4.png
+    - assets/images/Ellipse 2.png
+    - assets/images/Rectangle-3.png
+    - assets/images/Rectangle-2.png
+    - assets/images/Rectangle.png
+    - assets/images/ph_hands-clapping-light.png
+    - assets/images/iconamoon_comment-add-light.png
+    - assets/images/hugeicons_in-love.png
+    - assets/images/o.png
+    - assets/images/op.png
+    - assets/images/ov.png
+    - assets/images/1.png
+    - assets/images/2.png
+    - assets/images/3.png
+    - assets/images/IEEE CS.png
+    - assets/images/Ellipse 2-2.png
+    - assets/images/Sound-6.png
+    - assets/images/Quran-6.png
+    - assets/images/Ocean Waves Sound-2.png
+    - assets/images/Sound-6.png
+    - assets/images/Sound-5.png
+    - assets/images/q1.png
+    - assets/images/q2.png
+    - assets/images/q3.png
+    - assets/images/q4.png
+    - assets/images/q5.png
+    - assets/images/Ellipse 2-3.png
+    - assets/images/Ellipse 7.jpg
+    - assets/images/Ellipse 7.png
+    - assets/images/Quran-5 2.png
+    - assets/images/Rose Live.png
+    - assets/images/Ocean Waves Sound-2 2.png
+    - assets/images/Frame 34050.png
+    - assets/images/9p.png
+    - assets/images/Vector.png
+    - assets/images/Vector-2.png
+    - assets/images/flat-color-icons_google.png
+    - assets/images/Sound-7.png
+    - assets/images/Ocean Waves.png
+    - assets/images/Sound-6 2.png
+    - assets/images/Sound-7.png
+    - assets/images/Sound-5 2.png
+    - assets/images/nm.png
+    - assets/images/play sound.png
+    - assets/images/ll.png
+    - assets/images/ss.png
+    - assets/images/hh.png
+
+    #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
