@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 8.0), // Space between title and description
+                  SizedBox(height: 8.0),
                   Text(
                     "Don’t worry! Please enter your email below. We'll send you reset instructions.",
                     textAlign: TextAlign.center,
@@ -59,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             SizedBox(height: 40.0),
-            // Adjusted alignment for "Enter your email"
+
             Align(
               alignment: Alignment.centerLeft,
               child: Padding(
@@ -126,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      SlidePageRoute(page: Login()), // Ensure Login widget is correctly defined
+                      SlidePageRoute(page: Login()),
                     );
                   },
                   child: Text(

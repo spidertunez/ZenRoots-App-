@@ -192,15 +192,15 @@ class _HomeState extends State<home> {
     ];
 
     return items.map((item) {
-      final page = item['page'] as Widget; // Explicitly cast to Widget
-      final imagePath = item['image'] as String; // Explicitly cast to String
-      final text = item['text'] as String; // Explicitly cast to String
+      final page = item['page'] as Widget;
+      final imagePath = item['image'] as String;
+      final text = item['text'] as String;
 
       return GestureDetector(
         onTap: () {
           Navigator.pushReplacement(
             context,
-            SlidePageRoute(page: page), // Use the casted widget
+            SlidePageRoute(page: page),
           );
         },
         child: Container(
@@ -227,7 +227,7 @@ class _HomeState extends State<home> {
             children: [
               Expanded(
                 child: Text(
-                  text, // Use the casted string
+                  text,
                   style: TextStyle(fontSize: 22,
                       fontWeight: FontWeight.w600,
                       color: Color(0xff4F4351)),
@@ -235,7 +235,7 @@ class _HomeState extends State<home> {
               ),
               SizedBox(width: 16),
               Image.asset(
-                imagePath, // Use the casted string
+                imagePath,
                 width: 90,
                 height: 90,
                 fit: BoxFit.cover,

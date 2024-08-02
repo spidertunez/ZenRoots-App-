@@ -339,7 +339,7 @@ class _SignupScreenState extends State<SignupScreen> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  SlidePageRoute(page: Login()), // Ensure the LoginScreen is correctly imported and defined.
+                  SlidePageRoute(page: Login()),
                 );
               },
               child: Text(

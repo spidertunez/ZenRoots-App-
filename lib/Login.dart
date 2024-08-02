@@ -194,21 +194,21 @@ class _LoginScreenState extends State<LoginScreen> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: SizedBox(
-                  width: double.infinity, // Make the button fill the width
-                  height: 40, // Set the height of the button
+                  width: double.infinity,
+                  height: 40,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
                         context,
-                        SlidePageRoute(page: home()), // Ensure the HomeScreen is correctly imported and defined.
+                        SlidePageRoute(page: home()),
                       );
                     },
                     child: Text('Login'),
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white, backgroundColor: Color(0xffB498B9), // Text color
+                      foregroundColor: Colors.white, backgroundColor: Color(0xffB498B9),
                       elevation: 12, // Shadow effect
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20), // Rounded corners
+                        borderRadius: BorderRadius.circular(20),
                       ),
                     ),
                   ),
@@ -292,7 +292,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        SlidePageRoute(page: sign()), // Ensure the SignScreen is correctly imported and defined.
+                        SlidePageRoute(page: sign()),
                       );
                     },
                     child: Text(

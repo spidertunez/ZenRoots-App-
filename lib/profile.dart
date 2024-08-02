@@ -140,10 +140,10 @@ class _profileState extends State<profile> {
             ),
             SizedBox(height: 10),
             SizedBox(
-              height: 270, // Define a height for the GridView
+              height: 270,
               child: GridView.builder(
-                physics: BouncingScrollPhysics(), // Apply custom ScrollPhysics
-                scrollDirection: Axis.horizontal, // Enable horizontal scrolling
+                physics: BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 1,
                   crossAxisSpacing: 0,

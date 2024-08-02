@@ -30,19 +30,19 @@ class _sleep2State extends State<sleep2> {
                 child: Row(
                   children: [
                     Container(
-                      width: 55, // Smaller width of the circular button
-                      height: 55, // Smaller height of the circular button
+                      width: 55,
+                      height: 55,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.white,
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.2), // Color of the shadow
-                            spreadRadius: 5, // Amount by which the shadow spreads
-                            blurRadius: 4, // Amount of blur
-                            offset: Offset(0, 2), // Offset of the shadow (horizontal, vertical)
+                            color: Colors.black.withOpacity(0.2),
+                            spreadRadius: 5,
+                            blurRadius: 4,
+                            offset: Offset(0, 2),
                           ),
-                        ],// Background color of the circle
+                        ],
                       ),
 
                       child: Center(
@@ -55,8 +55,8 @@ class _sleep2State extends State<sleep2> {
                           },
                           icon: Icon(
                             Icons.keyboard_arrow_left,
-                            color: Color(0xffB498B9), // Color of the arrow
-                            size: 39, // Larger size of the arrow icon
+                            color: Color(0xffB498B9),
+                            size: 39,
                           ),
                         ),
                       ),

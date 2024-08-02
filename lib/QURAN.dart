@@ -24,7 +24,7 @@ class _QuranState extends State<Quran> {
   }) {
     return Stack(
       children: [
-        // Background image with circular border
+
         Positioned.fill(
           child: ClipRRect(    borderRadius: BorderRadius.circular(20.0),
             child: Image.asset(
@@ -55,7 +55,7 @@ class _QuranState extends State<Quran> {
                       style: const TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w500,
-                        color: Colors.white, // Text color on top of the image
+                        color: Colors.white,
                       ),
                     ),
                     const SizedBox(height: 5),
@@ -64,7 +64,7 @@ class _QuranState extends State<Quran> {
                       style: const TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 15,
-                        color: Colors.white, // Text color on top of the image
+                        color: Colors.white,
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -89,10 +89,10 @@ class _QuranState extends State<Quran> {
                               fontWeight: FontWeight.w400,
                               fontSize: 15,
                               color: Colors
-                                  .white, // Text color on top of the image
+                                  .white,
                             ),
                           ),
-                          Spacer(), // Pushes the favorite icon to the end
+                          Spacer(),
                           Icon(
                             Icons.favorite_border_outlined,
                             color: Color(0xffB498B9),

@@ -24,7 +24,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
             color: Colors.black.withOpacity(0.2),
             spreadRadius: 2,
             blurRadius: 8,
-            offset: Offset(0, 4), // changes position of shadow
+            offset: Offset(0, 4),
           ),
         ],
       ),

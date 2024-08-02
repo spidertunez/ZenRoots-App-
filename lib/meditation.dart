@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:untitled20/self.dart';
 import 'custom_page_route.dart';
+import 'flower/Flower1.dart';
 import 'home.dart';
 import 'CustomBottomNavigationBar.dart';
+import 'sleep.dart';
+import 'track.dart';
+import 'reduce.dart';
 
 class meditation extends StatefulWidget {
   const meditation({super.key});
@@ -14,86 +19,107 @@ class meditation extends StatefulWidget {
 class _meditationState extends State<meditation> {
   int _currentIndex = 0;
 
-
   Widget _buildMeditationCard({
     required String title,
     required String description,
     required String imagePath,
     required String routeName,
   }) {
-    return Container(
-      padding: EdgeInsets.all(10),
-      margin: EdgeInsets.symmetric(horizontal: 15),
-      width: double.infinity,
-      height: 155,
-      decoration: BoxDecoration(
-        border: Border.all(
-          width: 1,
-          color: Color(0xffE1BEE7),
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushReplacement(
+          context,
+          SlidePageRoute(page: _getPage(routeName)),
+        );
+      },
+      child: Container(
+        padding: EdgeInsets.all(10),
+        margin: EdgeInsets.symmetric(horizontal: 15),
+        width: double.infinity,
+        height: 155,
+        decoration: BoxDecoration(
+          border: Border.all(
+            width: 1,
+            color: Color(0xffE1BEE7),
+          ),
+          borderRadius: BorderRadius.circular(20),
+          color: Colors.white,
         ),
-        borderRadius: BorderRadius.circular(20),
-        color: Colors.white
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xff4F4351),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xff4F4351),
+                    ),
                   ),
-                ),
-                SizedBox(height: 5),
-                Text(
-                  description,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 13,
+                  SizedBox(height: 5),
+                  Text(
+                    description,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 13,
+                    ),
                   ),
-                ),
-                SizedBox(height: 10),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, routeName);
-                  },
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.play_circle_fill,
-                        color: Color(0xffB498B9),
-                        size: 35,
-                      ),
-                      SizedBox(width: 8),
-                      Text(
-                        'See All',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xffCBABD0),
-                          fontWeight: FontWeight.w500,
+                  SizedBox(height: 10),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        SlidePageRoute(page: _getPage(routeName)),
+                      );
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.play_circle_fill,
+                          color: Color(0xffB498B9),
+                          size: 35,
                         ),
-                      ),
-                    ],
+                        SizedBox(width: 8),
+                        Text(
+                          'See All',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Color(0xffCBABD0),
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          SizedBox(width: 10),
-          Container(
-            width: 130,
-            height: 130,
-            child: Image.asset(imagePath),
-          ),
-        ],
+            SizedBox(width: 10),
+            Container(
+              width: 130,
+              height: 130,
+              child: Image.asset(imagePath),
+            ),
+          ],
+        ),
       ),
     );
+  }
+
+  Widget _getPage(String routeName) {
+    switch (routeName) {
+      case '/flower1':
+        return Flower1();
+      case '/self':
+        return self();
+      default:
+        return meditation();
+    }
   }
 
   @override
@@ -103,39 +129,39 @@ class _meditationState extends State<meditation> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            children: [ SizedBox(width: 50,),
+            children: [
+              SizedBox(width: 50),
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Row(
                   children: [
-                    Container(
-                      width: 55, // Smaller width of the circular button
-                      height: 55, // Smaller height of the circular button
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.2), // Color of the shadow
-                            spreadRadius: 5, // Amount by which the shadow spreads
-                            blurRadius: 4, // Amount of blur
-                            offset: Offset(0, 2), // Offset of the shadow (horizontal, vertical)
-                          ),
-                        ],// Background color of the circle
-                      ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          SlidePageRoute(page: home()),);
 
-                      child: Center(
-                        child: IconButton(
-                          onPressed: () {
-                            Navigator.pushReplacement(
-                              context,
-                              SlidePageRoute(page: home()),
-                            );
-                          },
-                          icon: Icon(
+                      },
+                      child: Container(
+                        width: 55,
+                        height: 55,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.2),
+                              spreadRadius: 5,
+                              blurRadius: 4,
+                              offset: Offset(0, 2),
+                            ),
+                          ], // Background color of the circle
+                        ),
+                        child: Center(
+                          child: Icon(
                             Icons.keyboard_arrow_left,
-                            color: Color(0xffB498B9), // Color of the arrow
-                            size: 39, // Larger size of the arrow icon
+                            color: Color(0xffB498B9),
+                            size: 39,
                           ),
                         ),
                       ),
@@ -143,7 +169,7 @@ class _meditationState extends State<meditation> {
                   ],
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 10),
               Container(
                 decoration: BoxDecoration(
                   color: Color(0xffCBABD0),
@@ -181,7 +207,9 @@ class _meditationState extends State<meditation> {
                               ),
                               const SizedBox(height: 40),
                               GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+
+                                },
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
@@ -204,15 +232,15 @@ class _meditationState extends State<meditation> {
                               ),
                             ],
                           ),
-                        )
+                        ),
                       ],
                     ),
-                    SizedBox(width: 1,),
+                    SizedBox(width: 1),
                     Image.asset(
                       "assets/images/Frame 33877.png",
-                      width: 200,  // Adjust the width to fit the image well within the SizedBox
-                      height: 228, // Match the height of the SizedBox
-                      fit: BoxFit.cover, // Ensure the image covers the area properly
+                      width: 200,
+                      height: 228,
+                      fit: BoxFit.cover,
                     ),
                   ],
                 ),
@@ -250,7 +278,8 @@ class _meditationState extends State<meditation> {
           });
         },
       ),
-
     );
   }
+
+
 }

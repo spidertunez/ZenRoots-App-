@@ -43,12 +43,12 @@ class _comu2State extends State<comu2> {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Color(0xffB498B9)), // Background color
-                  foregroundColor: MaterialStateProperty.all(Colors.white), // Text color
+                  backgroundColor: MaterialStateProperty.all(Color(0xffB498B9)),
+                  foregroundColor: MaterialStateProperty.all(Colors.white),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20), // Rounded corners
+                    borderRadius: BorderRadius.circular(20),
                   )),
-                  elevation: MaterialStateProperty.all(4.0), // Shadow effect
+                  elevation: MaterialStateProperty.all(4.0),
                 ),
                 child: Text(
                   'Invite your friends',

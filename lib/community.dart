@@ -127,7 +127,7 @@ class _communityState extends State<community> {
                         ),
                       ),
                       SizedBox(height: 10),
-                      // Add the community cards here
+
                       _buildCommunityCard(
                         title: 'Laila Mohamed',
                         time: '29 min ago',
@@ -182,8 +182,7 @@ class _communityState extends State<community> {
             ),
           ),
           Positioned(
-            top: 80,  // Distance from the top
-            right: 20,  // Distance from the right
+            top: 80,
             child: Container(
               width: 60.0,
               height: 60.0,
@@ -197,6 +196,7 @@ class _communityState extends State<community> {
               ),
             ),
           ),
+
         ],
       ),
       bottomNavigationBar: CustomBottomNavigationBar(

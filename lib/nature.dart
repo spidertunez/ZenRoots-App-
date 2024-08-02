@@ -48,7 +48,7 @@ class _natureState extends State<nature> {
             height: 130,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
-             // Slight overlay for better text readability
+
             ),
             child: Row(
               children: [
@@ -62,7 +62,7 @@ class _natureState extends State<nature> {
                         style: const TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w500,
-                          color: Colors.white, // Text color on top of the image
+                          color: Colors.white,
                         ),
                       ),
                       const SizedBox(height: 10),
@@ -79,10 +79,10 @@ class _natureState extends State<nature> {
                             style: const TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 15,
-                              color: Colors.white, // Text color on top of the image
+                              color: Colors.white,
                             ),
                           ),
-                          Spacer(), // Pushes the favorite icon to the end
+                          Spacer(),
                           Icon(
                             Icons.favorite_border_outlined,
                             color: Color(0xffB498B9),
@@ -107,9 +107,9 @@ class _natureState extends State<nature> {
         return ocean();
       case '/nature':
         return nature();
-    // Add other cases for other routes here
+
       default:
-        return nature(); // Fallback to a default page if route is not recognized
+        return nature();
     }
   }
 
